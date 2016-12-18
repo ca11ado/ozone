@@ -4,8 +4,19 @@
   "description": "Тестовое задание для Ozone",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build && node server.js",
+    "build": "webpack -w & npm run cp-files",
+    "cp-files": "cp ./{index.html,index.css} ./public/ && touch env.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Khimtsov Anton",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.79.0"
+  }
 }
